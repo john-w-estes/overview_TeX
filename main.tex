@@ -1,0 +1,194 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.4 (26/09/2018)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\input{structure2.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+%\hypersetup{pdftitle={Title},pdfauthor={Author}} % Uncomment and fill out to include PDF metadata for the author and title of the book
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty} % Suppress headers and footers on the title page
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth]{Pictures/chapter headers/chapter_cover.png}};
+\draw (current page.center) node [fill=sky!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering MAT 185 Overview of Mathematics\\[15pt] % Book title
+{\Large A short look at what mathematics majors do}\\[20pt] % Subtitle
+{\huge John Estes}}}; % Author name
+\end{tikzpicture}
+\vfill
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent Copyright \copyright\ 2022 John Estes\\ % Copyright notice
+
+%\noindent \textsc{Published by Publisher}\\ % Publisher
+
+%\noindent \textsc{book-website.com}\\ % URL
+
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information, replace this with your own license (if any)
+
+\noindent \textit{First printing, August 2022} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\usechapterimagefalse % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\chapterimage{Pictures/chapter headers/chapter10_background.PNG} % Table of contents heading image
+
+\pagestyle{empty} % Disable headers and footers for the following pages
+
+\tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right side of the book
+
+\pagestyle{fancy} % Enable headers and footers again
+
+%----------------------------------------------------------------------------------------
+%	Precursor
+%----------------------------------------------------------------------------------------
+\input{Unit 0 Preliminary/Big Tips}
+
+%----------------------------------------------------------------------------------------
+%	Unit 1
+%----------------------------------------------------------------------------------------
+
+\part{Unit 1: Community and Culture}
+
+
+\input{Unit 1 Community and Culture/1 Belhaven Math}
+
+\input{Unit 1 Community and Culture/2 Careers in Mathematics}
+
+\input{Unit 1 Community and Culture/3 Math Community}
+
+
+%----------------------------------------------------------------------------------------
+%	Unit 2
+%----------------------------------------------------------------------------------------
+
+\part{Unit 2: Topics of Mathematics}
+
+\input{Unit 2 Topics of Mathematics/4 Journey to Math}
+
+\input{Unit 2 Topics of Mathematics/5 The World of Calculus}
+
+\input{Unit 2 Topics of Mathematics/6 Discrete Topics}
+
+\input{Unit 2 Topics of Mathematics/7 Probability and Stats}
+
+%------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	Unit 3
+%----------------------------------------------------------------------------------------
+\part{Unit 3: Technology}
+
+\input{Unit 3 Technology/8 Mathematics with Computers}
+
+\input{Unit 3 Technology/9 3D Printing}
+
+\input{Unit 3 Technology/10 More Technology}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\part{Bibliography}
+
+\chapter*{Bibliography}
+\addcontentsline{toc}{chapter}{\textcolor{sky}{Bibliography}} % Add a Bibliography heading to the table of contents
+
+%------------------------------------------------
+
+\section*{Articles}
+\addcontentsline{toc}{section}{Articles}
+\printbibliography[heading=bibempty,type=article]
+
+%------------------------------------------------
+
+\section*{Books}
+\addcontentsline{toc}{section}{Books}
+\printbibliography[heading=bibempty,type=book]
+
+
+%------------------------------------------------
+
+\section*{Videos}
+\addcontentsline{toc}{section}{Videos}
+\printbibliography[heading=bibempty,type=video]
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage % Make sure the index starts on an odd (right side) page
+\phantomsection
+\setlength{\columnsep}{0.75cm} % Space between the 2 columns of the index
+\addcontentsline{toc}{chapter}{\textcolor{sky}{Index}} % Add an Index heading to the table of contents
+\printindex % Output the index
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
