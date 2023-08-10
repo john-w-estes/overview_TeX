@@ -1,0 +1,126 @@
+%------------------------------------------------
+
+\section{The Monty Hall Question}\index{The Monty Hall Question}
+
+There was once a game show called the Monty Hall Show, in which a contestant was shown three doors. Behind one door is a new car, and behind the other two doors are goats!
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=3in]{Pictures/exercise pics/montyhall2.jpg}
+    \label{montyhall}
+\end{figure}
+
+\noindent After selecting a door, the host (Monty Hall) would open one of the unselected doors to reveal a goat. For example, suppose the contestant selected door 1. At his point, Monty Hall might open door 3 to reveal a goat as shown in the picture below.
+
+\noindent After opening door 3, the contestant gets a chance to change their selection. In our example, the contestant may choose either door 1 again or door 2. 
+
+\begin{exercise}
+If you were playing and choose door 1, what is the probability that you have won the game?
+\end{exercise}
+
+\begin{exercise}
+If you were playing, would stick with door 1? Go with door 2? Does it matter?
+\end{exercise}
+
+\blanks
+
+\noindent We want to determine what decision is the best decision to make, and we will collect data by simulating the Monty Hall Show. 
+
+\subsection{Let's Play the Monty Hall Game}
+
+You and your partner have been dealt three cards: one face card, and two non-face cards. We will say the face card is the car, and the non-face cards are the goats. You will each take turns being the host and the contestant playing the game as follows.
+
+\begin{itemize}
+    \item The host (while the contestant’s eyes are closed) will deal the three cards face down mentally knowing which card is the car.
+    \item The contestant points to a card. 
+    \item The host will then flip over a goat card that the contestant did not point to.
+    \item The contestant has a chance to pick the other card or stay with the original choice.
+    \item Once the contestant has decided, the host reveals the winner.
+    \item The group records a win or a loss.
+\end{itemize}
+	
+\noindent Let one player decide they will keep the original choice each time (sticks), and the other player decide to change their choice each time (switches). Let each player play the game 16 times and record the results below.
+
+\noindent \textbf{Player 1: Sticks}
+
+\begin{center}
+\begin{tabular}{ |c|c|c| c|} 
+ \hline
+Match & Result & Math & Result \\
+ \hline
+1 &  & 9 &  \\
+\hline
+2 &  & 10 &  \\
+\hline
+3 &  & 11 &  \\
+\hline
+4 &  & 12 &  \\
+\hline
+5 &  & 13 &  \\
+\hline
+6 &  & 14 &  \\
+\hline
+7 &  & 15 &  \\
+\hline
+8 &  & 16 &  \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent \textbf{Player 2: Switches}
+
+\begin{center}
+\begin{tabular}{ |c|c|c| c|} 
+ \hline
+Match & Result & Math & Result \\
+ \hline
+1 &  & 9 &  \\
+\hline
+2 &  & 10 &  \\
+\hline
+3 &  & 11 &  \\
+\hline
+4 &  & 12 &  \\
+\hline
+5 &  & 13 &  \\
+\hline
+6 &  & 14 &  \\
+\hline
+7 &  & 15 &  \\
+\hline
+8 &  & 16 &  \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{exercise}
+Which player won the most? What strategy seems to work the best?
+\end{exercise}
+
+\blanks
+
+\begin{exercise}
+Based upon your observation, is there a 50\% chance of winning regardless of sticking or switching?
+\end{exercise}
+
+\blanks
+
+\begin{remark}
+We cannot decide definitively what the chance of winning is based upon observing 16 matches! More than likely, every group in the class will have different observational result.
+\end{remark}
+
+\subsection{How does the Monty Hall Problem Work?}
+
+Calculating the probability of winning the Monty Hall game historically stumped 1000 PhD`s in Statistics! So if you`re confused on why switching worked so much better than sticking, don`t feel bad!
+
+\noindent It seems like switching is the better strategy, but why? Why is it not 50-50? Suppose we are playing, and we choose door 1. At this point, there is a 1/3 (33.33\%) of winning. Maybe more importantly, there is a 2/3 (66.66\%) of losing!
+
+\noindent Now the host reveals that door 3 is a goat. So we now have a 1/2 chance of being correct, right? No! The revelation that door 3 is a goat does not change our chance of winning being 1/3 (or losing being 2/3).
+
+\noindent So then if we switch after door 3 has been revealed, our chance of winning is actually 2/3!
+
+\subsection{100 Doors}
+
+Sometimes this question becomes more obvious if we have more doors to choose from. If there were 100 doors (with 99 goats) to pick from, and you choose door 1, would you feel good about winning the car? You would be painfully aware that the chance of losing is 99/100.
+
+\noindent Now, the host opens up 98 doors to reveal 98 goats. Wouldn't you feel good about the one door the host did not open? You should! You would have a 99\% chance of winning the car by switching!

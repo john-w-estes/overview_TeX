@@ -1,0 +1,125 @@
+%------------------------------------------------
+
+\section{Archimedes' Great Idea}\index{Archimedes' Great Idea}
+
+ Modern Calculus was formulated by Sir Isaac Newton and Gotfriend Leibniz in 1687. But the great mathematician, Archimedes, was really close to developing Calculus in 300 B.C. (Almost 2000 years before Newton and Leibniz!) with the formation of the limit: the starting point of well-defined calculus (though he never used the word ``limit" in his construction.). 
+ 
+\subsection{What is this weird number?}
+
+To illustrate how Archimedes was thinking in terms of calculus, we should think about circles. Ancient cultures were puzzled that every circle carried an unusual trait with it. That is, if the circle had diameter $d$, then it would take length $3d$ plus a tiny bit more to wrap around the circumference. 
+
+\noindent This fact was true with every circle, and each culture attempted to calculate the number that was the ratio of circumference to diameter. No one in the ancient world estimated it as well as Archimedes did.
+
+\noindent So what is this number? We define $\pi$ as $\pi = \dfrac{c}{d}$ for the circle with circumference $c$ and diameter $d$. Computers can now calculate $\pi$ to millions of digits, but $\pi$ eluded the greatest of minds for centuries.
+
+\noindent For reference, here are the first 30 digits of $\pi$.
+
+\begin{equation*}
+    \pi \approx 3.14159265358979323846264338327
+\end{equation*}
+
+\subsection{What about Archimedes?}
+
+Archimedes was interested in figuring out the very mysterious number of $\pi$, and eventually estimated $\pi$ to be between 21/7 and 210/71 (or between 3.1408 and 3.1429). That's really, really close for 300 B.C.
+
+\noindent How did he do it? For the ancient Greeks, geometry with circles was really difficult, but geometry with polygons was well-known. Archimedes was particularly gifted in calculation! 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=2.2in]{Pictures/exercise pics/archi_pi.PNG}
+    \caption{Archimedes' Construction}
+    \label{fig:archi_pi}
+\end{figure}
+
+\noindent He first inscribed a hexagon in a circle with radius 1 like in figure \ref{fig:archi_pi} and calculated its area. Then, realizing a dodecagon would fill up the circle a little better than the hexagon, he calculated the area of a dodecagon inscribed in a circle with radius 1. Then he calculated areas of 24-gons, 48-gons, and 96-gons (all by hand and without modern trigonometry), all inscribed in a circle of radius 1. He noticed that these areas trend towards some number really close to what we now call $\pi$. 
+
+\subsection{Following in the Footsteps of a Giant}
+
+Archimedes' calculation of $\pi$ is not an easy task to follow. Instead, we will mimic Archimedes' strategy to deduce the area of a circle. Our idea follows these steps:
+
+\begin{itemize}
+    \item Take a regular polygon on $n$ sides inscribed in a circle. \item Divide the polygon into $n$ triangles with one vertex at the circle's center.
+    \item Calculate the area of the polygon in terms of these $n$ triangles.
+    \item Let the center angle go to zero.
+\end{itemize}
+
+Consider the last step a bit. If the center angle gets smaller, then there must be more triangles, meaning that the polygon as more sides. Eventually, the number of sides goes to infinity resulting in a circle. Let's give it a shot!
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=3in]{Pictures/exercise pics/openstaxpolygon.PNG}
+    \caption{Inscribed polygon}
+    \label{fig:openstaxpolygon}
+\end{figure}
+
+\begin{exercise}
+Referring to Figure \ref{fig:openstaxpolygon}, deduce the height $h$ and base $b$ of the isosceles triangle in terms of $\theta$ and $r$.
+\end{exercise}
+
+\noindent We'll do this one together. From trigonometry, we remember that $\sin{\alpha} = \dfrac{opposite side}{hypotenuse}$ and $\cos{\alpha} = \dfrac{adjacent}{hypotenuse}$. By dividing the isosceles triangle down the middle, we obtain a right triangle. From there,
+
+\begin{equation}\label{ex_eq1}
+    \dfrac{h}{r} = \cos\left(\dfrac{\theta}{2} \right) \Rightarrow h = r\cos\left(\dfrac{\theta}{2} \right) 
+\end{equation}
+
+\noindent and 
+
+\begin{equation}\label{ex_eq2}
+    \dfrac{b/2}{r} = \sin\left(\dfrac{\theta}{2} \right) \Rightarrow b = 2r\sin\left(\dfrac{\theta}{2} \right). 
+\end{equation}
+
+\noindent Great! 
+
+\begin{exercise}\label{ex_trianglearea}
+Use Equation \ref{ex_eq1} and Equation \ref{ex_eq2} to find the area of the isosceles triangle. (Hint: $\dfrac{1}{2}\sin{\theta} = \sin\left(\dfrac{\theta}{2} \right)\cos\left(\dfrac{\theta}{2} \right)$.)
+\end{exercise}
+
+\newpage
+
+\begin{exercise}
+In Exercise \ref{ex_trianglearea}, we found the area of one triangle making up our polygon on $n$ sides. So now find the area of the $n$-gon. (Let $\theta = 2\pi/n$ since the $n\theta = 2\pi$.)
+\end{exercise}
+
+\vspace{2in}
+
+
+\noindent Before attempting this exercise, we recommend using Microsoft Excel (or Google Sheets). 
+
+\begin{exercise}
+Now use a table to deduce the area of $n$-gons with $n$ getting exceedingly large. The higher the value of $n$, the closer to the area of the circle we approximate. To simplify your calculations, let $r = 1$.
+\end{exercise}
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ $n$ & $\sin\left(\frac{2\pi}{n}\right)$\ & $A = \frac{1}{2} nr^2\sin\left(\frac{2\pi}{n}\right)$ \\ 
+ \hline
+$n = 6$ &  &  \\ 
+\hline
+$n = 12$ &  &  \\
+\hline
+$n = 24$ &  &  \\
+\hline
+$n = 48$ &  &  \\
+\hline
+$n = 96$ &  &  \\
+\hline
+$n = 1000$ &  &  \\
+\hline
+$n = 10000$ &  &  \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{exercise}
+From your calculation, hypothesize the area of a circle with radius $r$.
+\end{exercise}
+
+\blanks
+
+\footnotesize{This project can be found in \emph{Calculus Vol. 1}, OpenStax.} \cite{openstax_calc1}
+
+
+
+
+

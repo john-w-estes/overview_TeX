@@ -1,0 +1,107 @@
+%------------------------------------------------
+
+\section{Euler's Equation for Graph Theory}\index{Euler's Equation for Graph Theory}
+
+Graph Theory and has been a very hot research topic since the early 1900’s (though Graph Theory first arose with Leonhard Euler in the 1700’s).
+
+\noindent A graph $G$ is a set of two sets $V$ and $E$. The set $V$ is called the vertex set and is compiled of a set of objects. The set $E$ is called the edge set and is compiled of relationships between the objects.
+
+\begin{exercise}
+Let $G$ be a graph with $V = \{v_1,v_2,v_3,v_4,v_5,v_6\}$ and $E = \{v_1v_2, v_1v_4, v_2v_3, v_2v_5, v_3v4, v_3v_5, v_4v_5\}$. Draw a representation of $G$.
+\end{exercise}
+
+\vspace{2in}
+
+\subsection{Planar Graphs}
+
+There are many aspects of graphs that we can consider. For example, the graph in figure \ref{graph1} has 6 vertices and 9 edges. The graph is also connected (you can walk from any vertex to any other vertex), it has cycles of size 3, 4, 5, and 6, and it can be drawn in the plane without edges overlapping. From this last statement, we call the graph \textbf{planar.} 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=2in]{Pictures/exercise pics/graphs1.png}
+    \label{graph1}
+\end{figure}
+
+\noindent Planar graphs,in addition to vertices and edges, have faces (or bounded regions). The graph in \ref{graph1} has 5 faces (one includes the “outside”.). Additionally, the \textbf{Euler characteristic of a planar graph} is calculated by $v – e + f$, where $v, e,$ and $f$ represent the number of vertices, edges, and faces respectively of a given planar graph.
+
+\begin{exercise}
+Find the Euler characteristic of the graph in \ref{graph1}.
+\end{exercise}
+
+\newpage
+
+\begin{exercise}
+Draw five planar graphs (with at least six vertices). Then find the Euler characteristic of each one. What do you notice?
+\end{exercise}
+
+\vspace{3in}
+
+\begin{exercise}
+Draw a disconnected planar graph that has two connected pieces and find its Euler characteristic. Is it 2?
+\end{exercise}
+
+\vspace{2in}
+
+\begin{exercise}
+Now connect your disconnected planar graph by drawing one edge from one piece to another. Is the Euler characteristic now 2?
+\end{exercise}
+
+\vspace{2in}
+
+\subsection{Proving Euler's Equation}
+
+The Euler Equation states that for any connected planar graph $v - e + f = 2$. How could we prove Euler’s Equation? 
+
+\noindent The answer involves a technique called mathematical induction. We won’t get into the details of induction here, but here’s a rough sketch of how it works. Let’s start with a small planar graph like this one. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1in]{Pictures/exercise pics/graphs2.png}
+    \caption{Small planar graph on 3 vertices}
+    \label{graph2}
+\end{figure}
+
+\newpage
+\begin{exercise}
+Count the number of vertices, the number of edges, and the number of faces. Is the Euler Equation satisfied with this graph? 
+\end{exercise}
+
+\vspace{1in}
+
+\begin{exercise}
+Then add one edge and count these things for the new graph.
+\end{exercise}
+
+\vspace{1in}
+
+\noindent Notice that when we add a new edge, either we add a new vertex or we do not. If we do not, it is because we create a new face. In either case $v - e + f = 2$ remains balanced. 
+
+\noindent The next thing we do in induction is assume that Euler’s Equation is true for all connected planar graphs with $f-1$ or fewer faces and consider a connected planar graph with $f$ faces.
+
+\noindent For illustration, imagine the graph in figure \ref{graph3} has $f$ faces, $v$ vertices, and $e$ edges. Then imagine the graph obtained by deleting edge $e$. We’ll call that graph $G-e$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=3in]{Pictures/exercise pics/graphs3.png}
+    \label{graph3}
+\end{figure}
+
+\begin{exercise}
+How many faces does $G-e$ have? Can we then assume that Euler’s Equation works for $G-e$?
+\end{exercise}
+
+\newpage
+
+\begin{exercise}
+How many vertices and edges does $G-e$ have? Plug these values into Euler’s Equation.
+\end{exercise}
+
+\vspace{1in}
+
+\begin{exercise}
+Now add the edge back. We have one more edge and one more face. Use the expression from the previous exercise to show that Euler’s Equation does work for our connected planar graph.
+\end{exercise}
+
+\vspace{2in}
+
+\noindent We have informally proven Euler's Equation now with the logic of mathematical induction. Induction seems very strange the first time you see it, but it is one of the most powerful proof techniques we have. Mathematicians use induction to prove all sorts of amazing results.

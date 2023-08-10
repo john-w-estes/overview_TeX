@@ -1,0 +1,144 @@
+%------------------------------------------------
+
+\section{Prusa Slicer}\index{Prusa Slicer}
+
+In Section \ref{tinkercad}, we learned how to find things to print, and in Section \ref{3dprint} we learned the slicing process to move the object to the print. Now we will introduce the Prusa Slicer software, practice slicing, and 3D print an object.
+
+\subsection{Prusa}
+
+Prusa printers have skyrocketed in popularity over the past ten years and has become one of the most common mid-sized commercial printers. They are known for excellent quality, consistency, and easy use. We will learn how to use the Prusa i3 MK3s+ pictured in Figure \ref{fig:prusai3}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=3in]{Pictures/exercise pics/prusa.jpg}
+%    \caption{The Prusa i3 MK3S+ is a FDM printer}
+    \label{fig:prusai3}
+\end{figure}
+
+\begin{exercise}
+Visit prusa3d.com, and download the Prusa Slicer software. You can find it under Software. Be sure to select Prusa Mini+ and the i3 MK3s+ profiles when prompted.
+\end{exercise}
+{\footnotesize https://www.prusa3d.com/}
+
+\subsection{Prusa Slicer}
+
+Now we will look at the Prusa Slicer. Upon opening the Prusa Slicer, you should see the following screen.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{Pictures/exercise pics/prusaslicer_words.PNG}
+%    \caption{The Prusa i3 MK3S+ is a FDM printer}
+    \label{fig:prusaslicer}
+\end{figure}
+
+\noindent There is a lot going on here, so let's take a look at a few things. 
+
+\begin{exercise}
+Identify where to find the following elements using Figure \ref{fig:prusaslicer} as a reference.
+\begin{enumerate}
+    \item Adding stl files 
+    \item Verify settings:
+    \begin{enumerate}
+        \item Print settings
+        \item Filament
+        \item Printer
+        \item Supports
+        \item Infill
+    \end{enumerate}
+    \item Editing tools such as scaling, placement, and rotation
+    \item The Canvas
+    \item The Canvas and Sliced file viewing option
+    \item The Slice Button.
+\end{enumerate}
+\end{exercise}
+
+\subsection{Our first print}
+
+Click the ``Add" button and select your desired stl file. Your object will appear in the center of the canvas in green.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{Pictures/exercise pics/prusaslicer_squirtle.PNG}
+%    \caption{The Prusa i3 MK3S+ is a FDM printer}
+    \label{fig:prusaslicer_squirtle}
+\end{figure}
+
+\begin{exercise}
+Add an stl file into the Prusa Slicer canvas.
+\end{exercise}
+
+Now it's time to adjust settings.
+
+\subsection{Layer Height}
+
+Under the ``Print Settings" category, you can adjust the print's layer height. The default layer height is 0.15 mm, which is great for most projects. However, you can change this height depending on the project. 
+
+\noindent The rule of thumb is the smaller the layer height, the longer the print will take. However, a smaller layer height leaves more room for detail in your print. 
+
+\subsection{Filament}
+
+Each filament material requires it's own temperature settings. Trying to use material different that the sliced setting will more than likely end in disaster!
+
+\noindent The most common print material is PLA. More than 90\% of Belhaven's Maker Campus prints are in PLA.
+
+\subsection{Supports}
+
+\begin{wrapfigure}{r}{0.25\textwidth} %this figure will be at the right
+    \centering
+    \includegraphics[width=0.2\textwidth]{Pictures/exercise pics/prusaslicer_supports.PNG}
+    %\caption{Microsoft Teams}
+    \label{fig:prusaslicer_supports}
+\end{wrapfigure}
+
+Some objects, such as a rhinoceros, cannot be printed by themselves. For example, the rhinoceros' stomach would have to be printed midair since the nozzle only traverses in the z-direction. To fix this issue, we can add supports.
+
+\noindent Support is additional printed material to allow our object to printed completely. This material is designed to be removed after the print is completed. You can see how the support material appears in the sliced version of a file in Figure \ref{fig:prusaslicer_supports}.
+
+\subsection{Infill}
+
+A print's infill percentage is measurement of how dense it is on the inside. A print with 100\% infill is completely solid, while 0\% infill is completely hollow. In practice, you rarely set infill to 100\% unless the piece will be structural under a lot of stress (like needing to withstand torque).
+
+\subsection{Laying out the canvas}
+
+Using the tools on the left side of the Slicer screen, you can arrange your object to fit your need. The top icon moves your object in the plane while the next two adjust scaling and rotation respectively.
+
+\noindent The other tools are for more advanced uses, which we won't cover here.
+
+\begin{exercise}
+Lay out your canvas as needed. Try moving your object in the plane. Try scaling it up or down, and then try rotation.
+\end{exercise}
+
+\begin{remark}
+If you make a mistake, use \textbf{CTRL+Z} to undo your previous action.
+\end{remark}
+
+\subsection{Slicing Preview}
+
+For our first print, we do not need to adjust settings (unless you need supports), so we are ready to slice. Go ahead and click the ``Slice now" button. 
+
+\begin{wrapfigure}{r}{0.25\textwidth} %this figure will be at the right
+    \centering
+    \includegraphics[width=0.2\textwidth]{Pictures/exercise pics/prusaslicer_squirtlesliced.PNG}
+    %\caption{Microsoft Teams}
+    \label{fig:prusaslicer_supports}
+\end{wrapfigure}
+
+\noindent Once Prusa Slicer has finished slicing, you should see your model in a different color. This is the sliced view (notice the lower left corner). From here you can see how each layer will look by scrolling up and down the orange bar to the right of the canvas, and even see how the nozzle will run on that layer with the orange bar below the image.
+
+\begin{exercise}
+Slice your object. Scroll through your layers to see what the machine will do when printing your object.
+\end{exercise}
+
+\subsection{Exporting Your File}
+
+Notice that once you sliced your object, the ``Slice now" button now reads ``Export G-code". Clicking this button now will allow you to save the g-code file somewhere. The g-code file is the file your printer needs to understand how to print your object exactly how you want it printed. 
+
+\noindent The easiest way to transfer your g-code file is to take the printer's SD card, insert it into your computer (You can use the lab's card reader dongle if needed.), and to save the file directly to the SD card. Prusa slicer makes this very easy with a button that saves the sliced g-code file directly to your inserted drive.
+
+\noindent You are now ready to print, and your instructor will demonstrate how to operate the Prusa i3 MK3s+.
+
+
+
+
+
+

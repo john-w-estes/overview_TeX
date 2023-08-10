@@ -1,0 +1,131 @@
+%------------------------------------------------
+
+\section{Intro to Fractals}\index{Intro to Fractals}
+
+A fractal is a mathematical set in which each subpart is statistically similar to the whole. We typically introduce fractals as a structure obtained through the process of iteration.
+
+\noindent We will pull several interesting examples from Lippman's ``Math in Society" \cite{math_in_society}. The first example illustrates the process of fractal generation of iteration.
+
+\begin{example}\label{fractal_exmample1}
+Suppose that we start with a filled-in triangle. At each step of iteration, we connect the midpoint of each side and remove the middle triangle. We then repeat these steps.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=3in]{Pictures/exercise pics/fractal example1.png}
+    %\caption{Microsoft Teams}
+    \label{fig:fractal1}
+\end{figure}
+\end{example}
+
+\begin{definition}
+The initial shape in a fractal is called the \textbf{initiator}, and the iterative action is known as the \textbf{generator}.
+\end{definition}
+
+\noindent In Example \ref{fractal_exmample1}, the black triangle is the initiator, and the iterative step is action of connecting the midpoints of each side and removing the middle triangle.
+
+\newpage
+ 
+\subsection{Playing with Fractals (Group Work)} 
+
+Break into groups of three to complete the following exercises.
+
+
+\begin{exercise}
+Use the given initiators and generators to create the following iterative fractals. Draw the iterative steps 1 through 3.
+\end{exercise}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.5in,left]{Pictures/exercise pics/fractal exercise 1.png}
+    %\caption{Microsoft Teams}
+    \label{fig:fractalex1}
+\end{figure}
+
+\vspace{2in}
+
+\begin{exercise}
+\end{exercise}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.5in,left]{Pictures/exercise pics/fractal exercise 2.png}
+    %\caption{Microsoft Teams}
+    \label{fig:fractalex2}
+\end{figure}
+
+
+\newpage
+
+\begin{exercise}
+\end{exercise}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.5in,left]{Pictures/exercise pics/fractal exercise 3.png}
+    %\caption{Microsoft Teams}
+    \label{fig:fractalex3}
+\end{figure}
+
+\vspace{2in}
+
+\subsection{Fraction Dimension}
+
+We will discuss Dimension in more detail at a later time, but we all have some intuition of dimension.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=2.5in]{Pictures/exercise pics/fractal example1.png}
+    \caption{Fractal examples}
+    \label{fig:fractal1}
+\end{figure}
+
+\begin{exercise}
+As a class, give an example of a 1-dimensional object. How about a 2-dimensional object? A 3-dimensional object?
+\end{exercise}
+
+\noindent Those are easy, but what about the fractal known as Sierpinski's Triangle shown below?
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=2in]{Pictures/exercise pics/sierpinski.png}
+    \caption{Sierpinski`s Triangle}
+    \label{fig:sierpinski}
+\end{figure}
+
+\noindent It looks 2-dimensional, but is it? Consider the situation in Example \ref{fractal_exmample1}. 
+
+\noindent Notice that the Step 1 figure has 1/3 the area of the generator figure, and the Step 2 figure has 1/3 the area of the Step 1 figure. Notice that if we keep going through this process, we end up with Sierpinski's Triangle... and how much area does it have? 2?
+
+\begin{remark}
+Fractals are interesting in that their measured dimension is not an integer! Fractal dimension is found by
+\begin{equation*}
+    D = \dfrac{\log(C)}{\log{S}},
+\end{equation*} where it takes $C$ copies of the original shape to scale it by a factor of $S$.
+\end{remark}
+
+
+\begin{example}
+The dimension of Sierpenski's Triangle is 
+
+    \begin{equation*}
+        D = \dfrac{\log{3}}{\log{2}}
+          \approx & 1.58496.     
+    \end{equation*}
+\end{example}
+\noindent So Sierpenski's Triangle is not 1-dimensional! Or 2-dimensional! Its dimension is somewhere in between!
+
+\begin{exercise}
+In your groups, determine the dimensions of the previous three fractals. 
+\end{exercise}
+
+\begin{enumerate}
+    \item \hspace{2in} \\
+    \vspace{2in}
+    \item \hspace{2in} \\
+    \vspace{2in}
+    \item \hspace{2in} \\
+\end{enumerate}
+
+
+
+
+
+
+

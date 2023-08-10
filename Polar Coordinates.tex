@@ -1,0 +1,116 @@
+%------------------------------------------------
+
+\section{Polar Coordinates}\index{Polar Coordinates}
+
+We typically represent a point in the plane by measuring its distance in the $x$-direction and its distance in the $y$-direction. For example, the point $P=\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)$ is written to show that $P$ is found by going $1/\sqrt{2}$ in the $x$-direction and $1/\sqrt{2}$ in the $y$-direction. Coordinates like this are called rectangular coordinates (because they fit nicely in a rectangular grid).
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+         \includegraphics[width=.9\textwidth]{Pictures/exercise pics/coordianates_rect.png}
+         \caption{Rectangular Coordinates}
+    \label{fig:coordinates_rect}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=.9\textwidth]{Pictures/exercise pics/coordianates_polar.png}
+        \caption{Polar Coordinates}
+    \label{fig:coordinates_polar}
+    \end{minipage}
+\end{figure}
+
+\noindent What if instead of thinking in terms of rectangles, we thought of things in terms of circles? Polar coordinates do just that. Polar coordinates define a point by $(r, \theta)$. That is, we need a radius and an angle of rotation. We can get to the same point $P=\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)$ by going out a distance of 1 and rotating $\pi/4$ (45 degrees). 
+
+\noindent So the rectangular point $\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)$ can be written in polar coordinates as $\left(1,\frac{\pi}{4} \right)$. 
+
+\subsection{Polar Coordinates in Wolfram Cloud}
+
+So what kind of things can we plot in polar coordinates? We will explore polar coordinates in Wolfram Cloud, a free version of the powerful Computer Algebra System (CAS), Wolfram`s Mathematica. 
+
+\noindent Wolfram Cloud (and Mathematica) can handle really advanced mathematics easily, and polar coordinates are not a problem. We will take a look today.
+
+\begin{exercise}
+Open an account at wolframcloud.com and then open a new notebook.
+\end{exercise}
+
+
+\noindent We can plot a function with polar coordinates with this formula \lstinline$PolarPlot[ radius function, {theta, starting angle,$ \\ \lstinline$ending angle }]$.
+
+\begin{remark}
+\textbf{Be careful!} Wolfram Cloud and Mathematica are very sensitive with syntax. A misplaced comma or capitalization will result in an error. 
+\end{remark}
+
+\begin{remark}
+Mathematica functions are \textbf{always} capitalized and inputs are included with brackets. So $\sin(3x)$ is entered in Wolfram language as \lstinline$Sin[3x]$.
+\end{remark}
+
+\newpage
+
+\begin{exercise}
+Try plotting the following functions. Sketch your graphs below.
+\end{exercise}
+
+\begin{enumerate}
+    \item $r(\theta) = \theta, \; 0 \leq \theta \leq 2\pi$
+    \vspace{2in}
+    \item $r(\theta)=2sin(\theta), \:   0 \leq \theta \leq 2\pi$
+    \vspace{2in}
+    \item $r(\theta)= cos(4\theta), \; 0\leq \theta \leq 2\pi$
+    \newpage
+    \item $r(\theta) = \ln(\theta), \; 1 \leq \theta \leq 10\pi$ (Try \lstinline$Log[ ]$ for the natural logarithm.)
+\end{enumerate}
+\vspace{2in}
+
+\noindent This last one is called the logarithmic spiral. 
+
+\begin{exercise}
+Graph the logarithmic spiral again, but this time let $\theta$ go from 1 to $50\pi$.
+\end{exercise}
+
+\vspace{2in}
+
+\subsection{The Manipulate Function}
+Wolfram Cloud can create some very interesting visuals. We will use the \lstinline$Manipulate[ ]$ function to visualize how these polar plots are changing with certain parameters.
+
+\noindent We will use an \textbf{outside-in} writing style. We are accustomed to writing left to write, but when writing with nestled functions, lists, and parameters it is very easy to misplace a comma, a bracket, a brace, etc. By writing your code with the outside functions first and the code inside of that next, it is easier to keep up with all of the details. Be sure to write the following exercises as directed.
+
+\begin{exercise}\label{polarplot2}
+Type the following into Wolfram Cloud in the following order:
+\begin{enumerate}
+    \item \lstinline$Manipulate[ ]$ (Manipulate is the outermost function.)
+    \item \lstinline$Manipulate[ PolarPlot[ ] ]$ (We now have a polar plot inside our Manipulate function.)
+    \item \lstinline$Manipulate[ PolarPlot[ Sin[a*theta ], {theta, 1, 2Pi} ] ]$
+    \item \lstinline$Manipulate[ PolarPlot[ Sin[a*theta], {theta, 1, 2Pi} ], {a, 1, 10}]$
+    \item \lstinline$Manipulate[ PolarPlot[ Sin[a*theta], {theta, 1, 2Pi}, PlotRange -> {{-1,1},{-1,1} }],$ \\ \lstinline${a, 1, 10}]$ (We add a plot range to our polar plot.)
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Describe what you see in the plot from Exercise \ref{polarplot2}.
+\end{exercise}
+
+\blanks
+\blanks
+
+\noindent Let's try another one!
+
+\begin{exercise}\label{polarplot1}
+Type the following into Wolfram Cloud in the following order:
+\begin{enumerate}
+    \item \lstinline$Manipulate[ ]$ (Manipulate is the outermost function.)
+    \item \lstinline$Manipulate[ PolarPlot[ ] ]$ (We now have a polar plot inside our Manipulate function.)
+    \item \lstinline$Manipulate[ PolarPlot[ Sin[a*theta ]*Cos[b*theta], {theta, 0, 10Pi} ], {a, -2, 2}, {b, -2, 2} ]$
+    \item \lstinline$Manipulate[ PolarPlot[ Sin[a*theta ]*Cos[b*theta], {theta, 0, 10Pi}, PlotRange ->$ \\ \lstinline${{-1,1},{-1,1}}], {a, -2, 2}, {b, -2, 2}]$ (We add a plot range to our polar plot.)
+\end{enumerate}
+
+\end{exercise}
+
+
+\begin{exercise}
+Describe what you see in the plot from Exercise \ref{polarplot1}.
+\end{exercise}
+
+\blanks
+\blanks
+

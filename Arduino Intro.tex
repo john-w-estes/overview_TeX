@@ -1,0 +1,123 @@
+%------------------------------------------------
+
+\section{Intro to Arduino}\index{Intro to Arduino}
+
+In recent years, small solder-less circuit boards called dev boards have filled the marketplace. Engineers, hobbyists, artists, and educators have designed all sorts of DYI projects with these boards that range from robots to custom sensors to mechanical cosplay accessories to light-featured art pieces. Many of these projects are open sourced with shared instructions for others to follow, and the boards and supporting components are relatively cheap.
+
+\noindent There are several brands of dev boards, but the most well-known and supported is Arduino. We will look at the basics of Arduino in this section.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1in]{Pictures/exercise pics/Arduino_Logo.svg.png}
+    %\caption{The Prusa i3 MK3S is a FDM printer}
+    \label{fig:arduinologo}
+\end{figure}
+
+\noindent To get started, visit arduino.cc.
+
+\begin{exercise}
+Create an Arduino account at arduino.cc.
+\end{exercise}
+\footnotesize{https://www.arduino.cc}
+
+\subsection{Hardware and Software of Arduino}
+
+The amazing power of Arduino boards is the ability to connect the physical world with the digital. Thus, Arduino projects always feature two key components: the hardware and the software.
+
+\noindent For each of the following examples, we will consider both, but let's take a quick look at the hardware.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=4in]{Pictures/exercise pics/arduino_uno.PNG}
+    \caption{The Arduino Uno}
+    \label{fig:arduinouno}
+\end{figure}
+
+\noindent Pictured in Figure \ref{fig:arduinouno} is the Arduino Uno board. The Uno is one of Arduino's most popular board and is a great dev board to get started with small electronics projects. We won't dig too deeply into the details of everything on the Uno, but there is a power source, a set of programmable inputs and outputs, and the ATmega328P chip.
+
+\noindent With a well-written script on the chip and a correct assignment of inputs and outputs, the Arduino Uno can accomplish an amazing amount of projects.
+
+\begin{exercise}
+Break into groups, open your Arduino Uno kit, and examine your Uno board.
+\end{exercise}
+
+\subsection{Connecting to your Board}
+
+As for writing the scripts for your board, you can either download the Arduino IDE (recommended), or use the Arduino Web Editor. The Web Editor will be fine for today's lesson.
+
+\noindent Use your printer-USB cable to physically connect the Arduino board to your computer. Select the correct port. The board and the computer are now connected.
+
+\noindent The process of uploading a script to your board involves first verifying the script (which checks for syntax errors) and then uploading the script to the board.
+
+\subsection{Blink}
+
+It's time for our first Arduino project: Blink. For this project, we only need an Uno board and the blink script. From either the Arduino IDE or Web Editor, locate the Blink script under Example $\rightarrow$ Basics $\rightarrow$ Blink.
+
+\noindent There are several important pieces to any Arduino script. You'll first notice a preamble of text in gray. This beginning is comments about what the script does and who wrote it.
+
+\noindent The second part of code is \lstinline$void setup( )$. This is where we declare the parameters we will need in the script, and so we tell the board what pins we need, whether they are inputs or outputs, and so on. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=3in]{Pictures/exercise pics/arduino_void_setup.PNG}
+   % \caption{The Arduino Uno}
+    \label{fig:arduino_void_setup}
+\end{figure}
+
+\noindent In the Blink script, we are setting the \lstinline$LED_BUILTIN$ and an output. In other words, the only output we need is the board's built-in LED light.
+
+\noindent The last part of the code is \lstinline$void loop( )$. This is where we communicate to the board what we want it to do.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=4in]{Pictures/exercise pics/arduino_void_loop.PNG}
+   \caption{Blink: \lstinline$void loop( )$}
+    \label{fig:arduino_void_loop}
+\end{figure}
+
+\begin{exercise}
+Explain what the \lstinline$void loop( )$ tells the board to do. Refer to \ref{fig:arduino_void_loop} if needed.
+\end{exercise}
+
+\blanks
+
+\begin{exercise}
+Upload the Blink script to your group's Arduino board.
+\end{exercise}
+
+
+\subsection{The Button Circuit}
+
+Now that we know how to upload a script to the board, let's try something a little more interesting. 
+
+\begin{exercise}
+With your group, build the circuit found in Figure \ref{fig:arduino_button}.
+\end{exercise}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=3in]{Pictures/exercise pics/arduino_button.PNG}
+   \caption{Button circuit}
+    \label{fig:arduino_button}
+\end{figure}
+
+\noindent What we want is for the LED to light up when we press the button on our breadboard. But how do we do this? Let's first look at the circuit you have constructed.
+
+\noindent We will set pin 13 as an output, so electricity will be sent from pin 13 through the LED through the 220 $\Omega$ resistor (to lesson the flow of electricity to protect the LED) back to the ground. This is called a simple circuit. 
+The button receives a constant 5V from the board and sends a signal back to pin 2. This signal reads whether or not the button is pressed (\lstinline$HIGH$) or not (\lstinline$LOW$).
+
+\subsection{The Button Script}
+
+You can find the Button script under Examples $\rightarrow$ Digital $\rightarrow$ Button. Notice under the \lstinline$void loop( )$, we have an ``if-then" loop. If the button is pressed, a signal is sent to pin 2 (an input) that tells the board to turn on the LED through pin 13 (an output).
+
+\begin{exercise}
+With your group, upload the Button script to your board. Verify that is works as planned.
+\end{exercise}
+
+\subsection{Arduino and TinkerCAD}
+
+In addition to being a place to design 3D models, TinkerCAD also houses an Arduino simulator. You can easily drag and drop common Arduino and circuit pieces to build a digital model of a circuit. You can also write the code and run it.
+
+\noindent If you're planning a big Arduino project, starting with TinkerCAD might be a good option to test out your circuit.
+
+
